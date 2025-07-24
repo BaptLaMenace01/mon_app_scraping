@@ -1,0 +1,6 @@
+nom_entreprise,siren,adresse,code_postal,ville,date_creation,activite_principale,libelle_activite,forme_juridique,capital,statut_entreprise,nom_dirigeant,fonction_dirigeant
+BIG3PL,929796977,,33310.0,LORMONT,2024-07-01,,,"SARL, société à responsabilité limitée",1000.0,,,
+BLADA ABDELKRIM,929122430,,33310.0,LORMONT,2024-07-01,,,Entrepreneur individuel,,,,
+ALTO ADIGE,929446110,,33310.0,LORMONT,2024-07-01,,,"EURL, entreprise unipersonnelle à responsabilité limitée",1000.0,,,
+MATCAS IGOR,929604155,,33370.0,YVRAC,2024-07-01,,,Entrepreneur individuel,,,,
+SPFPL GAUTIER,925370140,,33370.0,ARTIGUES-PRES-BORDEAUX,2024-07-01,,,Société de Participations Financières de Profession Libérale Société par actions simplifiée (SPFPL SAS),1000.0,,,
