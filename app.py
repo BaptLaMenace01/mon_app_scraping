@@ -29,3 +29,26 @@ def upload_file():
 if __name__ == '__main__':
     app.run(debug=True)
 
+from mon_app_scraping.script_pappers import lancer_collecte_pappers
+
+@app.route("/scraper", methods=["POST"])
+def scraper_pappers():
+    codes_postaux_str = request.form.get("codes_postaux", "")
+    age_max = int(request.form.get("age_max", "1"))
+    max_total = int(request.form.get("max_total", "10"))
+
+    codes_postaux = [cp.strip() for cp in codes_postaux_str.split(",") if cp.strip()]
+
+    try:
+        nom_fichier = lancer_collecte_pappers(
+            dossier_sortie="mon_app_scraping/static",
+            codes_postaux=codes_postaux,
+            max_age_annees=age_max,
+            max_total=max_total
+        )
+        return redirect(f"/static/{nom_fichier}")
+    except Exception as e:
+        return f"Erreur : {str(e)}"
+
+
+
