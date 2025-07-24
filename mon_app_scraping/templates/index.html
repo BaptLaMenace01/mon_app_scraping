@@ -1,29 +1,12 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Scraper Pappers - MVP</title>
-</head>
-<body style="font-family: sans-serif; max-width: 600px; margin: 40px auto;">
+<form action="/scraper" method="post">
+  <label for="codes_postaux">Codes postaux (séparés par virgules) :</label><br>
+  <input type="text" id="codes_postaux" name="codes_postaux" placeholder="33100, 33150, 33300"><br><br>
 
-  <h1>🔎 Scraping d'entreprises</h1>
+  <label for="age_max">Âge max des entreprises (en années) :</label><br>
+  <input type="number" id="age_max" name="age_max" min="0" value="1"><br><br>
 
-  <!-- Étape 1 : Lancer le scraping Pappers -->
-  <form action="/pappers" method="post">
-    <button type="submit">📥 Lancer la collecte via Pappers</button>
-  </form>
+  <label for="max_total">Nombre maximum d'entreprises :</label><br>
+  <input type="number" id="max_total" name="max_total" min="1" value="10"><br><br>
 
-  <!-- Étape 2 : Uploader le fichier pour enrichissement -->
-  <h2 style="margin-top: 40px;">📤 Enrichissement des données</h2>
-  <form action="/enrich" method="post" enctype="multipart/form-data">
-    <input type="file" name="fichier" required>
-    <button type="submit">🔁 Lancer l'enrichissement</button>
-  </form>
-
-  {% if fichier %}
-    <p style="margin-top: 30px;">✅ Fichier prêt : <a href="/static/{{ fichier }}">{{ fichier }}</a></p>
-  {% endif %}
-
-</body>
-</html>
-
+  <button type="submit">Lancer le scraping Pappers</button>
+</form>
